@@ -141,7 +141,6 @@ const ages = [
   calcAge(years[years.length - 1]),
 ];
 console.log(ages);
-*/
 
 const friends = ["Micheal", "Steven", "Peter"];
 
@@ -160,4 +159,15 @@ console.log(popped);
 console.log(friends);
 
 friends.shift(); // First
-console.log(friends);
+console.log(friends.indexOf("Steven"));
+console.log(friends.indexOf("Bob"));
+
+friends.push(23);
+console.log(friends.includes("Steven"));
+console.log(friends.includes("Bob"));
+console.log(friends.includes(23));
+
+if (friends.includes("Steven")) {
+  console.log("You have a friend called Steven");
+}
+*/
