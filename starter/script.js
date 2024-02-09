@@ -170,4 +170,87 @@ console.log(friends.includes(23));
 if (friends.includes("Steven")) {
   console.log("You have a friend called Steven");
 }
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtman",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Micheal", "Peter", "Steven"],
+};
+console.log(jonas);
+
+console.log(jonas.lastName);
+console.log(jonas["lastName"]);
+
+const nameKey = "Name";
+console.log(jonas["first" + nameKey]);
+console.log(jonas["last" + nameKey]);
+
+// console.log(jonas."first" + nameKey)
+
+const interestedIn = prompt("What do you want to know about Jonas? ");
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log(
+    `${interestedIn} is not available here! Choose between firstName, LastName, Age, job, and friends`
+  );
+}
+
+jonas.location = "Portugal";
+jonas["twitter"] = "@jonasschemdtman";
+console.log(jonas);
+
+// Challenge
+// "Jonas has three friends and his best friend is called Micheal"
+
+console.log(
+  `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is ${jonas.friends[0]}`
+);
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtman",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Micheal", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // }
+
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2037 - this.birthYear;
+  // }
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    this.jonasSummary = `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    } and he has ${this.hasDriversLicense ? "a" : "no"} drivers license`;
+    return this.jonasSummary;
+  },
+};
+console.log(jonas.calcAge());
+
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+// Challenge
+// "Jonas is a 46 year old teacher, and he has a drivers license"
+
+console.log(jonas.getSummary());
+
+console.log(jonas.jonasSummary);
+console.log(jonas.jonasSummary);
+console.log(jonas.jonasSummary);
 */
